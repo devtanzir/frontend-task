@@ -1,7 +1,7 @@
 import React from "react";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { FaFacebook, FaLinkedin, FaSquareInstagram, FaSquareXTwitter } from "react-icons/fa6";
-import { IoTimeOutline } from "react-icons/io5";
+import { IoLocation, IoMailOutline, IoTimeOutline } from "react-icons/io5";
 
 const Footer: React.FC = () => {
   return (
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
           </div>
           <div className="col-span-1 flex gap-5 flex-col items-center text-center">
             <span className="text-primary text-3xl inline-block">
-              <IoTimeOutline />
+            <IoMailOutline />
             </span>
             <h6 className="text-2xl">BOOK A TABLE</h6>
             <p>
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
           </div>
           <div className="col-span-1 flex gap-5 flex-col items-center text-center">
             <span className="text-primary text-3xl inline-block">
-              <IoTimeOutline />
+            <IoLocation />
             </span>
             <h6 className="text-2xl">Our Address</h6>
             <p>

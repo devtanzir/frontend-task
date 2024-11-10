@@ -1,5 +1,5 @@
 import SectionHeader from "../shared/section-header";
-import Carousel from "react-multi-carousel";
+import Carousel, { CarouselInternalState } from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import React from "react";
@@ -8,13 +8,11 @@ interface ButtonGroupProps {
     next: () => void;
     previous: () => void;
     goToSlide: (index: number) => void;
-    carouselState?: {
-        currentSlide: number;
-    };
+    carouselState?: CarouselInternalState;
 }
 
-export const ButtonGroup: React.FC<ButtonGroupProps> = ({ next, previous, goToSlide, carouselState }) => {
-    const currentSlide = carouselState ? carouselState.currentSlide : 0;
+export const ButtonGroup: React.FC<ButtonGroupProps> = ({ next, previous,  }) => {
+
     return (
         <div className="absolute sm:top-[120px] sm:right-0 bottom-2 sm:bottom-auto left-[50%] sm:left-auto translate-x-[-50%] sm:translate-x-0 flex gap-5">
             <button
@@ -83,11 +81,16 @@ const Slider: React.FC<SliderProps> = ({ desktop, tablet, mobile, sideImage, sid
                 autoPlaySpeed={3000}
                 keyBoardControl={true}
                 customTransition="all 3s"
-                customButtonGroup={<ButtonGroup />}
                 arrows={false}
                 renderButtonGroupOutside={true}
                 transitionDuration={500}
                 removeArrowOnDeviceType={["tablet", "mobile"]}
+                customButtonGroup={React.createElement(ButtonGroup, {
+                    next: () => {}, 
+                    previous: () => {}, 
+                    goToSlide: () => {}, 
+                    carouselState: undefined, 
+                })}
             >
                 {children}
             </Carousel>
