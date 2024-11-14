@@ -2,17 +2,20 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import AboutImage from "/images/about.jpg";
 import TabContent from "./components/tab-content";
 import ServiceBox from "./components/service-box";
-import { services } from "@/constants/about";
+import { aboutTabs, services } from "@/constants/about";
+import Container from "../shared/container";
 
 const About = () => {
   return (
     <>
-      <div className="container mx-auto flex flex-col lg:flex-row gap-10 items-start pt-12 lg:pt-24 px-4 lg:px-4 relative">
+    <Container>
+    <div className="flex flex-col lg:flex-row gap-10 items-start pt-12 lg:pt-24 relative">
         {/* About Image with Overlay Text */}
         <div className="w-full lg:w-1/2 relative">
-          <img src={AboutImage} alt="About Us" className="w-full rounded-lg" />
-          <div className="bg-white p-5 rounded-xl absolute top-6 left-6 flex items-center font-medium gap-3 shadow-lg">
-            <svg className="w-20 h-20 transform -rotate-90" viewBox="0 0 36 36">
+          <img src={AboutImage} alt="About Us" className="w-full sm:h-[460px]" />
+
+          <div className="bg-white sm:p-5 p-3 rounded-xl absolute top-6 left-6 flex items-center font-medium gap-3 shadow-lg">
+            <svg className="sm:w-20 sm:h-20 w-12 h-12 transform -rotate-90" viewBox="0 0 36 36">
               <circle
                 cx="18"
                 cy="18"
@@ -33,7 +36,7 @@ const About = () => {
               />
             </svg>
             <svg
-              className="w-4 h-4 transform -rotate-90 absolute top-6 left-[30px]"
+              className="w-2 h-2 transform -rotate-90 absolute sm:top-6 sm:left-[30px] top-4 left-5"
               viewBox="0 0 36 36"
             >
               <circle
@@ -55,30 +58,29 @@ const About = () => {
                 strokeLinecap="round"
               />
             </svg>
-            <span className="font-semibold text-2xl absolute top-[45px] left-[42px] text-black">
+            <span className="font-bold sm:text-[26px] text-[13px] absolute sm:top-[41px] top-[27px] left-[27px] sm:left-[42px] text-dark">
               50+
             </span>
-            <p className="ml-2">
+            <p className="sm:ml-2 text-[10px] sm:text-base font-semibold text-dark">
               Market <br /> Experiences
             </p>
           </div>
         </div>
-
         {/* Tabs Section */}
         <div className="w-full lg:w-1/2 mt-10 lg:mt-0">
           <Tabs defaultValue="about" className="max-w-full">
             <TabsList className="flex gap-3">
-              {["about", "experience", "contact"].map((tab) => (
+              {aboutTabs.map((tab) => (
                 <TabsTrigger
-                  key={tab}
-                  className="py-2 px-4 text-sm lg:text-base font-medium transition-colors duration-300 rounded-md data-[state=active]:bg-blood-red data-[state=active]:text-white"
-                  value={tab}
+                  key={tab.id}
+                  className="py-[6px] px-4 text-sm lg:text-base font-medium transition-colors duration-300 data-[state=active]:bg-blood-red data-[state=active]:text-white"
+                  value={tab.name}
                 >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                  {tab.name.charAt(0).toUpperCase() + tab.name.slice(1)}
                 </TabsTrigger>
               ))}
             </TabsList>
-            <div className="h-[1px] w-full bg-blood-red mt-4" />
+            <div className="h-[1px] w-full bg-blood-red" />
             <div className="mt-5">
               <TabsContent value="about">
                 <TabContent
@@ -114,7 +116,7 @@ const About = () => {
       </div>
 
       {/* Services Section */}
-      <div className="container mx-auto pb-24 pt-14 flex flex-col md:flex-row gap-8 md:gap-16 md:items-center items-start px-4 lg:px-0">
+      <div className="pb-24 pt-14 flex flex-col gap-8 lg:flex-row justify-between lg:gap-16 lg:items-center items-start px-4 lg:px-0">
         {services.map((service) => (
           <ServiceBox
             key={service.id}
@@ -124,6 +126,8 @@ const About = () => {
           />
         ))}
       </div>
+
+    </Container>
 
       {/* Sidebar Image */}
       <img

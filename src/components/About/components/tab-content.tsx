@@ -21,7 +21,7 @@ const TabContent: React.FC<TabProps> = ({
   return (
     <>
       <div className="flex flex-col gap-5">
-        <h2 className="lg:text-4xl text-2xl leading-10 ">{title}</h2>
+        <h2 className="lg:text-[62px] font-bold text-[40px] leading-[48px] lg:leading-[62px] text-dark">{title}</h2>
         <p className="text-para-color">{description}</p>
 
         <div className="flex gap-7 items-center">
@@ -30,7 +30,7 @@ const TabContent: React.FC<TabProps> = ({
           {phone && (
             <div className="flex items-center gap-2 text-blood-red">
               <FiPhoneCall />
-              <span className="font-semibold text-black">{phoneNumber}</span>
+              <span className="text-button sm:text-lg text-sm font-bold">{phoneNumber}</span>
             </div>
           )}
         </div>

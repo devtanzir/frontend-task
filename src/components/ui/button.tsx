@@ -19,14 +19,16 @@ const buttonVariants = cva(
           "bg-neutral-100 text-neutral-900 shadow-sm hover:bg-neutral-100/80 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-800/80",
         ghost: "hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50",
         link: "text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50",
-        theme: "bg-primary text-black uppercase hover:bg-[#e8af04]"
+        theme: "bg-primary lg:text-lg text-[15px] text-button font-bold uppercase hover:bg-[#e8af04]",
+        booking: "bg-primary text-button font-bold uppercase hover:bg-[#e8af04] text-base"
       },
       size: {
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
-        theme: "py-[10px] px-6 rounded-none"
+        theme: "lg:py-4 py-[14px] lg:px-6 px-5 rounded-none",
+        booking: "py-[10px] px-6 rounded-none",
       },
     },
     defaultVariants: {
@@ -56,4 +58,5 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 )
 Button.displayName = "Button"
 
+// eslint-disable-next-line react-refresh/only-export-components
 export { Button, buttonVariants }

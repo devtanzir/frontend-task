@@ -4,6 +4,10 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ['"Poppins"', "sans-serif"],
+        raleway: ['"Raleway"', "sans-serif"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -15,10 +19,12 @@ module.exports = {
         "footer-bg": "url('/images/footer.jpg')",
       },
       colors: {
-        "blood-red": "#C4342B",
+        "blood-red": "#B52B1D",
         primary: "#FEBF00",
         "para-color": "#333333",
         cream: "#fbf7f2",
+        button: "#0A1425",
+        dark: "#181818",
       },
     },
   },

@@ -20,3 +20,17 @@ export const services = [
         description: "Sustainable packaging",
       },
 ]
+export const aboutTabs = [
+  {
+    id: createId(),
+    name: "about"
+  },
+  {
+    id: createId(),
+    name: "experience"
+  },
+  {
+    id: createId(),
+    name: "contact"
+  },
+]

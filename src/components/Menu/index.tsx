@@ -10,7 +10,7 @@ const Menu = () => {
         tablet={2}
         mobile={1}
         sideImage="/images/side.png"
-        sideImagePosition="w-[360px] absolute top-[100px] left-[-417px] rotate-[-75deg]"
+        sideImagePosition="w-[360px] absolute top-[100px] left-[-520px] rotate-[-75deg]"
         sectionHeaderTitle="Crispy, Every Bite Taste"
         sectionHeaderDes="POPULAR FOOD ITEMS"
       >
